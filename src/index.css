@@ -1,0 +1,470 @@
+
+/* =========================
+   1. GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   2. SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: #111827;
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  background: #2563eb;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar-brand h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.sidebar-brand span {
+  color: #9ca3af;
+  font-size: 9px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Regular navigation links */
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  color: #d1d5db;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: #374151;
+  color: white;
+}
+
+.nav-link.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Text or emoji icons */
+
+.nav-icon,
+.nav-dot {
+  width: 22px;
+  min-width: 22px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================
+   3. EXPANDABLE MENU GROUPS
+========================= */
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-group-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #d1d5db;
+  text-align: left;
+  font-size: 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-group-button:hover {
+  background: #374151;
+  color: white;
+}
+
+.nav-group-button.active {
+  color: white;
+  background: #1f2937;
+}
+
+.nav-group-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-chevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.nav-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Submenu links */
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 20px;
+  padding-left: 14px;
+  border-left: 1px solid #374151;
+}
+
+.submenu-link {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.submenu-link:hover {
+  background: #374151;
+  color: white;
+}
+
+.submenu-link.active {
+  background: #1d4ed8;
+  color: white;
+}
+
+
+/* =========================
+   4. SIDEBAR FOOTER
+========================= */
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 20px 8px 0;
+  border-top: 1px solid #374151;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #374151;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.sidebar-footer strong,
+.sidebar-footer span {
+  display: block;
+  font-size: 12px;
+}
+
+.sidebar-footer span {
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+
+/* =========================
+   5. MAIN AREA
+========================= */
+
+.main-area {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   6. NAVBAR
+========================= */
+
+.navbar {
+  background: white;
+  min-height: 85px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.navbar-left p {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.navbar-right,
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-profile {
+  font-size: 13px;
+}
+
+.notification-button {
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.notification-button:hover {
+  background: #f1f5f9;
+}
+
+/* Hidden on desktop; displayed on mobile */
+
+.menu-toggle {
+  display: none;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+
+/* =========================
+   7. PAGE CONTENT
+========================= */
+
+.page-content {
+  flex: 1;
+  padding: 28px;
+  min-width: 0;
+}
+
+
+/* =========================
+   8. MOBILE SIDEBAR OVERLAY
+========================= */
+
+/* Hidden by default on desktop */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================
+   9. TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .page-content {
+    padding: 22px;
+  }
+}
+
+
+/* =========================
+   10. MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 760px) {
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1001;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  /* Sidebar opens when this class is added */
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Dark background behind the open sidebar */
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 45%);
+    z-index: 1000;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .navbar {
+    min-height: 72px;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .navbar-left h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .navbar-profile span {
+    display: none;
+  }
+
+  .page-content {
+    padding: 20px;
+  }
+}
+
+
+/* =========================
+   11. SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 8px;
+    padding: 14px 12px;
+  }
+
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .navbar-left h3 {
+    font-size: 16px;
+  }
+
+  .navbar-left p {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .navbar-profile {
+    gap: 6px;
+  }
+
+  .notification-button {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .page-content {
+    padding: 16px;
+  }
+}

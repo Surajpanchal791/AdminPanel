@@ -6,12 +6,8 @@ function Navbar({ onMenuClick }) {
 
   const pageTitles = {
     "/": "Dashboard",
-    "/users": "All Users",
-    "/users/active": "Active Users",
-    "/users/restricted": "Restricted Users",
-    "/kyc/pending": "Pending KYC",
-    "/kyc/approved": "Approved KYC",
-    "/kyc/rejected": "Rejected KYC",
+    "/users": " Users Details",
+    "/kyc": "KYC",
     "/transactions/deposits": "Deposits",
     "/transactions/withdrawals": "Withdrawals",
     "/trading/orders": "Orders",

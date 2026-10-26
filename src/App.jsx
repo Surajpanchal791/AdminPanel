@@ -1,15 +1,7 @@
 
 import { Routes, Route } from "react-router-dom";
 import AdminLayout from "./layout/AdminLayouts";
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Welcome to CryptoAdmin</h2>
-      <p>Your exchange overview will appear here.</p>
-    </div>
-  );
-}
+import Dashboard from "./pages/Dashboard";
 
 function PlaceholderPage({ title }) {
   return (
